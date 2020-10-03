@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
         width: 225,
         height: 225,
         resizeMode: 'contain',
-        borderRadius: 30,
+        borderRadius: 15,
     },
     contact: {
         fontSize: 20,

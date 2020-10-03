@@ -19,31 +19,34 @@ const Home = ({ navigation }) => {
     return (
 
         <View style={styles.container}>
-
-                <View style={styles.head}>
-
-                    <View style={{ marginTop: '8%', flexDirection: 'row', justifyContent: 'flex-end', backgroundColor: '#fff', height: 40, width: 350, alignItems: 'center', borderRadius: 10 }}>
-                        <TextInput>
-                        </TextInput>
-                        <Image style={{ height: 30, width: 30, marginRight: '2%' }} source={require('../icons/search.png')}
-                        ></Image>
-                    </View>
-
-                    <TouchableOpacity onPress={() => setInf(true)}>
-                        <Image style={styles.img} source={SIU}></Image>
-                    </TouchableOpacity>
-                    {/* LOGO TIKLAMA ŞİRKET INF. */}
-                    {
-                        inf && (
-                            <Text style={styles.siu}> SIU DIGITAL </Text>
-                        )
-                    }
+            <View style={{backgroundColor :'#0C0910',alignItems :'center'}}>
+                <View style={styles.input}>
+                    <TextInput>
+                    </TextInput>
+                    <Image style={{ height: 30, width: 30, marginRight: '2%' }} source={require('../icons/search.png')}
+                    ></Image>
                 </View>
+            </View>
+
+            <View style={styles.head}>
 
 
-                <ScrollView style={{marginTop :-70}}>
+
+                <TouchableOpacity onPress={() => setInf(true)}>
+                    <Image style={styles.img} source={SIU}></Image>
+                </TouchableOpacity>
+                {/* LOGO TIKLAMA ŞİRKET INF. */}
+                {
+                    inf && (
+                        <Text style={styles.siu}> SIU DIGITAL </Text>
+                    )
+                }
+            </View>
+
+
+            <ScrollView style={{ marginTop: -70 }}>
                 <View>
-                    
+
                     <Text style={styles.title}>ENGINEER</Text>
 
                     <View style={{ marginLeft: '3%' }}>
@@ -54,7 +57,7 @@ const Home = ({ navigation }) => {
                             {/* list user verileri cardlara eklendi */}
                             {
                                 data.map((get, i) => {
-                                    return <UCard navigation={navigation} email={get.email} id={get.id} name={get.first_name} lastname={get.last_name} url={get.avatar}></UCard>
+                                    return <UCard key={i} navigation={navigation} email={get.email} id={get.id} name={get.first_name} lastname={get.last_name} url={get.avatar}></UCard>
                                 })
                             }
                         </ScrollView>
@@ -70,14 +73,14 @@ const Home = ({ navigation }) => {
                             {/* list user verileri cardlara eklendi */}
                             {
                                 data.map((get, i) => {
-                                    return <UCard navigation={navigation} email={get.email} id={get.id} name={get.first_name} lastname={get.last_name} url={get.avatar}></UCard>
+                                    return <UCard key={i} navigation={navigation} email={get.email} id={get.id} name={get.first_name} lastname={get.last_name} url={get.avatar}></UCard>
                                 })
                             }
                         </ScrollView>
                     </View>
 
                 </View>
-                </ScrollView>
+            </ScrollView>
 
 
         </View>
@@ -113,12 +116,21 @@ const styles = StyleSheet.create({
         fontSize: 22,
         fontWeight: 'bold'
     },
-    title :{
-        color :'#33416B',
-        marginLeft :'5%',
-        margin:5,
-        fontSize : 20,
-        fontWeight :'bold'
+    title: {
+        color: '#33416B',
+        marginLeft: '5%',
+        margin: 5,
+        fontSize: 20,
+        fontWeight: 'bold'
+    },
+    input :{
+        flexDirection: 'row', 
+        justifyContent: 'flex-end', 
+        backgroundColor: '#fff', 
+        height: 40, 
+        width: 350, 
+        alignItems: 'center', 
+        borderRadius: 10
     }
 });
 
