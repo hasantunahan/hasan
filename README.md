@@ -17,13 +17,10 @@ If you want to use flow, brew install flow
 
 Quick start
 
-1.step  
-  npm install 
+1.step    npm install 
   
-2.step 
-  cd ios
+2.step  cd ios
 
-3.step 
-  pod install
+3.step   pod install
   
   
